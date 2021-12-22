@@ -61,12 +61,12 @@ public class Main {
             case 4:
                 break;
             default:
-                System.out.println("ERROR: Opció no vàlida!");
+                System.out.println("ERROR: Opción no válida !");
                 menuPrincipal(saldo);
                 break;
         }
     }
-    public static int entero(){
+    public static int entero(){ //Control de errores de enteros
         Scanner input = new Scanner(System.in);
         int valor=0;
         boolean valorCorrecte=false;
@@ -83,7 +83,7 @@ public class Main {
         } while (!valorCorrecte);
         return valor;
     }
-    public static float flot(){
+    public static float flot(){ //Control de errores de floats
         Scanner input = new Scanner(System.in);
         float valor=0;
         boolean valorCorrecte=false;
@@ -100,28 +100,8 @@ public class Main {
         } while (!valorCorrecte);
         return valor;
     }
-    public static void ruleta(float saldo){
-        //int [][] num = new int[38][2];
-        int [] num= new int[38];
-        String[] color= new String[38];
-
-        for (int i = 0; i < num.length; i++) {
-            num[i]=i+1;
-            for (int j = 0; j < num.length; j++) {
-                color[j]=" Red";
-                j++;
-                color[j]=" Black";
-            }
-        }
-        for (int i = 0; i <num.length; i++) {
-            System.out.print(num[i]);
-            System.out.println(color[i]);
-            System.out.println("");
-        }
-        float apuesta2=apuesta(saldo);
-        System.out.println("Tu apuesta es de: "+apuesta2);
-    }
-    public static float apuesta(float saldo){
+    
+    public static float apuesta(float saldo){ //Comprueba si la apuesta indicada es valida comparandolo con el saldo y usando recursividad
         float capuesta=0;
         float tapuesta=0;
         System.out.println("Tu saldo es de: "+saldo);
